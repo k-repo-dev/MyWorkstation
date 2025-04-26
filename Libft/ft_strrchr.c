@@ -6,11 +6,11 @@
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 12:09:57 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/16 13:41:52 by krepo            ###   ########.fr       */
+/*   Updated: 2025/04/26 12:00:46 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	unsigned int	i;
 	char			*result;

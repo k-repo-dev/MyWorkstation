@@ -1,6 +1,7 @@
 {
 	"cSpell.words": [
 		"atoi",
+		"bonusc",
 		"bzero",
 		"calloc",
 		"COMPILERFLAGS",
@@ -14,6 +15,14 @@
 		"itoa",
 		"krepo",
 		"libft",
+		"lstadd",
+		"lstclear",
+		"lstdelone",
+		"lstiter",
+		"lstlast",
+		"lstmap",
+		"lstnew",
+		"lstsize",
 		"memchr",
 		"memcmp",
 		"memcpy",

@@ -6,13 +6,13 @@
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:25:31 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/17 11:19:28 by krepo            ###   ########.fr       */
+/*   Updated: 2025/04/26 11:52:12 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	int		i;
 	char	*tdst;
@@ -23,7 +23,10 @@ void	*ft_memcpy(void *dst, void *src, size_t n)
 		return (dst);
 	tdst = (unsigned char *) dst;
 	tsrc = (unsigned char *) src;
-	while (i++ < n)
+	while (i < n)
+	{
 		tdst[i] = tsrc[i];
+		i++;
+	}
 	return (dst);
 }

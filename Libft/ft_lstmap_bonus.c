@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 16:21:21 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/24 16:37:43 by krepo            ###   ########.fr       */
+/*   Created: 2025/04/25 13:51:56 by krepo             #+#    #+#             */
+/*   Updated: 2025/04/25 14:24:08 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*tmp_lst;
-	size_t	i;
+	t_list	*new_obj;
+	t_list	*new_lst;
 
-	i = 0;
-	tmp_lst = lst;
-	while (tmp_lst)
+	if (!lst || !f || !del)
+		return (NULL);
+	new_lst = NULL;
+	while (lst)
 	{
-		tmp_lst = tmp_lst->next;
-		i++;
-	return (i);
+		new_obj = ft_lstnew(f(lst->content));
+		if (new_obj == NULL)
+		{
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, new_obj);
+		lst = lst->next;
+	}
+	return (new_lst);
 }

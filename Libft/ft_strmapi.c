@@ -6,7 +6,7 @@
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:05:29 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/23 15:19:21 by krepo            ###   ########.fr       */
+/*   Updated: 2025/04/26 15:38:19 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
-	size_t	len;
 	char	*result;
 
-	len = ft_strlen(s);
-	result = malloc(len + 1);
+	result = malloc(ft_strlen(s) + 1);
 	if (result == NULL)
 		return (NULL);
 	i = 0;
@@ -28,5 +26,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		result[i] = f(i, s[i]);
 		i++;
 	}
+	result[i] = '\0';
 	return (result);
 }

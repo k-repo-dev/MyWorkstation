@@ -6,7 +6,7 @@
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:28:53 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/18 11:26:14 by krepo            ###   ########.fr       */
+/*   Updated: 2025/04/26 12:35:25 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 
 int	ft_atoi(const char *nptr)
 {
-	long int	fvalue;
+	long long	fvalue;
 	int			nvalue;
 	size_t		i;
 
 	fvalue = 0;
 	nvalue = 0;
 	i = 0;
-	while (nptr[i] == 0 || (nptr[i] >= 9 && nptr[i <= 13]) || nptr[i] == 32)
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
-	if (nptr[i] == '+' && nptr[i + 1] != '-')
-		i++;
-	if (nptr[i] == '-')
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
-		nvalue++;
+		if (nptr[i] == '-')
+			nvalue++;
 		i++;
 	}
 	while (nptr[i] >= '0' && nptr[i]<= '9')
@@ -37,5 +36,5 @@ int	ft_atoi(const char *nptr)
 	}
 	if (nvalue == 1)
 		fvalue = fvalue * (-1);
-	return (fvalue);
+	return ((int) fvalue);
 }

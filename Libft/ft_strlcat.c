@@ -6,7 +6,7 @@
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 08:24:19 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/17 11:13:06 by krepo            ###   ########.fr       */
+/*   Updated: 2025/04/26 13:58:16 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,20 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dstl;
 	size_t	srcl;
+	size_t 	i;
 
 	dstl = ft_strlen(dst);
 	srcl = ft_strlen(src);
+	i = 0;
+	if (size == 0)
+		return (srcl);
 	if (dstl >= size)
-		dstl = size;
-	if (dstl == size)
 		return (size + srcl);
-	if (srcl < size - dstl)
-		ft_memcpy(dst + dstl, src, srcl + 1);
-	else
+	while (src[i] != '\0' && dstl + i < size - 1)
 	{
-		ft_memcpy(dst + dstl, src, size - srcl - 1);
-		dst[size - 1] = 0;
+		dst[i + dstl] = src[i];
+		i++;
 	}
+	dst[dstl + i] = '\0';
 	return (dstl + srcl);
 }

@@ -6,7 +6,7 @@
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 10:40:05 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/23 14:56:03 by krepo            ###   ########.fr       */
+/*   Updated: 2025/04/26 15:17:40 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_itoa(int n)
 	if (result == NULL)
 		return (NULL);
 	if (temp_n == 0)
-		result[0] = '\0';
+		result[0] = '0';
 	if (temp_n < 0)
 	{
 		temp_n = -temp_n;

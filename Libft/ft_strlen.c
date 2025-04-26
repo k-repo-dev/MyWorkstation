@@ -6,13 +6,13 @@
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:31:23 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/18 12:57:57 by krepo            ###   ########.fr       */
+/*   Updated: 2025/04/26 10:57:46 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 

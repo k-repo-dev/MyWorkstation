@@ -6,7 +6,7 @@
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 10:56:13 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/21 16:30:18 by krepo            ###   ########.fr       */
+/*   Updated: 2025/04/26 13:15:35 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,28 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char	*sub_s;
-	size_t			s_len;
-	size_t			i;
+	char	*sub_s;
+	size_t	s_len;
+	size_t	i;
 
-	s_len = ft_strlen(s);
-	if (!s)
-		return (0);
-	if (start >= s_len)
-		sub_s = (char *)malloc(1);
-	if ((s_len - start) < len)
-	{
-		len = s_len - start;
-		if (!sub_s)
-			return (0);
-	}
 	i = 0;
-	sub_s = (char *)malloc(len + 1);
-	while (i < len)
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (ft_strlen(s) - start > len)
+		s_len = len;
+	else
+		s_len = ft_strlen(s) - start;
+	sub_s = malloc(s_len + 1);
+	if (sub_s == NULL)
+		return (NULL);
+	while (s[start] != '\0' && i < len)
 	{
-		sub_s[i] = s[start + i];
+		sub_s[i] = s[start];
 		i++;
+		start++;
 	}
+	sub_s[i] = '\0';
 	return (sub_s);
 }

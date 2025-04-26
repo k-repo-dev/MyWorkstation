@@ -6,7 +6,7 @@
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 08:24:14 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/17 11:04:47 by krepo            ###   ########.fr       */
+/*   Updated: 2025/04/26 13:51:38 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	srcl;
+	size_t	i;
 
 	srcl = ft_strlen(src);
-	if (srcl + 1 < size)
-		ft_memcpy(dst, src, srcl + 1);
-	else if (srcl != 0)
+	i = 0;
+	if (size == 0)
+		return (srcl);
+	while (src[i] != '\0' && i  < size - 1)
 	{
-		ft_memcpy(dst, src, srcl - 1);
-		dst[size - 1] = 0;
-	}
+		dst[i] = src[i];
+		i++;
+ 	}
+	dst[i] = '\0';
 	return (srcl);
 }
