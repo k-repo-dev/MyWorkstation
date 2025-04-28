@@ -6,7 +6,7 @@
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:25:31 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/26 11:52:12 by krepo            ###   ########.fr       */
+/*   Updated: 2025/04/28 13:15:21 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	if (src == 0 && dst == 0)
 		return (dst);
-	tdst = (unsigned char *) dst;
-	tsrc = (unsigned char *) src;
+	tdst = (char *) dst;
+	tsrc = (char *) src;
 	while (i < n)
 	{
 		tdst[i] = tsrc[i];

@@ -19,11 +19,11 @@ BONUS_SRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 				ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 				ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
+
 NAME = libft.a
 
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
-
 
 all: $(NAME)
 
@@ -33,8 +33,12 @@ $(NAME): $(OBJS)
 bonus: $(OBJS) $(BONUS_OBJS)
 	ar -rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
+test: main.c $(NAME) 
+	$(COMPILER) $(COMPILERFLAGS) main.c -L. -lft -o test
+	./test 
+	
 clean:
-	rm -f $(OBJS) $(BONUS_OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS) test
 	echo "removing object files"
 
 fclean: clean

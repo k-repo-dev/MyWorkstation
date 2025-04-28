@@ -23,5 +23,6 @@ int	ft_lstsize(t_list *lst)
 	{
 		tmp_lst = tmp_lst->next;
 		i++;
+	}
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:47:02 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/16 15:22:48 by krepo            ###   ########.fr       */
+/*   Updated: 2025/04/28 13:19:59 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		cc[i] = (unsigned char *) c;
+		cc[i] = (unsigned char) c;
 		i++;
 	}
 	return (s);

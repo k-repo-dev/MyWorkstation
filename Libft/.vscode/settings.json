@@ -1,5 +1,6 @@
 {
 	"cSpell.words": [
+		"abcdez",
 		"atoi",
 		"bonusc",
 		"bzero",
@@ -47,6 +48,7 @@
 		"strscpy",
 		"strtrim",
 		"tdst",
+		"Testft",
 		"tolower",
 		"toupper",
 		"Wextra"

@@ -6,7 +6,7 @@
 /*   By: krepo <krepo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:46:34 by krepo             #+#    #+#             */
-/*   Updated: 2025/04/17 08:16:30 by krepo            ###   ########.fr       */
+/*   Updated: 2025/04/28 15:28:48 by krepo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,26 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	char	*tdst;
 	char	*tsrc;
-	int		i;
+	size_t		i;
 
-	if (!dst && !src)
-		return (0);
 	tdst = (char *) dst;
 	tsrc = (char *) src;
 	i = 0;
-	if (tdst > tsrc)
+	if (tdst < tsrc)
 	{
-		while(n-- > 0)
-			tdst[n] = tsrc[n];
-	}
-	else 
-	{
-		while (i < n)
+		while(i < n)
 		{
 			tdst[i] = tsrc[i];
 			i++;
+		}
+	}
+	else 
+	{
+		i = n;
+		while (i > 0)
+		{
+			i--;
+			tdst[i] = tsrc[i];
 		}
 	}
 	return (dst);
