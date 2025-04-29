@@ -17,6 +17,26 @@ void	test_ft_memmove(void);
 void	test_ft_memchr(void);
 void	test_ft_memcmp(void);
 void	test_ft_calloc(void);
+void	test_ft_strlen(void);
+void	test_ft_strlcpy(void);
+void	test_ft_strlcat(void);
+void	test_ft_strchr(void);
+void	test_ft_strrchr(void);
+void	test_ft_strncmp(void);
+void	test_ft_strnstr(void);
+void	test_ft_atoi(void);
+void	test_ft_strdup(void);
+void	test_ft_substr(void);
+void	test_ft_strjoin(void);
+void	test_ft_strtrim(void);
+void	test_ft_split(void);
+void	test_ft_itoa(void);
+void	test_ft_strmapi(void);
+void	test_ft_striteri(void);
+void	test_ft_putchar_fd(void);
+void	test_ft_putstr_fd(void);
+void	test_ft_putendl_fd(void);
+void	test_ft_putnbr_fd(void);
 
 int	main(void)
 {
@@ -292,4 +312,86 @@ void	test_ft_calloc(void)
 		printf("[3] KO: calloc(count, 0) wrong.\n");
 	free(ptr);
 	free(ft_ptr);
+}
+/*TEST FOR STRING*/
+void	test_ft_strlen(void)
+{
+
+}
+void	test_ft_strlcpy(void)
+{
+
+}
+void	test_ft_strlcat(void)
+{
+
+}
+void	test_ft_strchr(void)
+{
+
+}
+void	test_ft_strrchr(void)
+{
+
+}
+void	test_ft_strncmp(void)
+{
+
+}
+void	test_ft_strnstr(void)
+{
+
+}
+void	test_ft_atoi(void)
+{
+
+}
+void	test_ft_strdup(void)
+{
+
+}
+void	test_ft_substr(void)
+{
+
+}
+void	test_ft_strjoin(void)
+{
+
+}
+void	test_ft_strtrim(void)
+{
+
+}
+void	test_ft_split(void)
+{
+
+}
+void	test_ft_itoa(void)
+{
+
+}
+void	test_ft_strmapi(void)
+{
+
+}
+void	test_ft_striteri(void)
+{
+
+}
+/*TESTING PRINT*/
+void	test_ft_putchar_fd(void)
+{
+
+}
+void	test_ft_putstr_fd(void)
+{
+
+}
+void	test_ft_putendl_fd(void)
+{
+
+}
+void	test_ft_putnbr_fd(void)
+{
+
 }
